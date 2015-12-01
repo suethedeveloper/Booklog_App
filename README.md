@@ -54,13 +54,14 @@ Gemfile:
       gem 'spring-commands-rspe'
       
 run:
-      bundle install
+
+        bundle install
     
 run (this will create a new guard file):
-      guard init rspec
+
+        guard init rspec
 
 open Guardfile from a root directory and change:
-
 Original
 
       guard :rspec, cmd: "bundle exec rspec" do
@@ -70,7 +71,8 @@ Change To
       guard :rspec, cmd: "rspec" do
 
 run to start the guard:
-    ```guard```
+
+      guard
 
 ------
 
