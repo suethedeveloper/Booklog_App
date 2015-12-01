@@ -72,10 +72,11 @@ run to start the guard:
 #### Add Bootstrap
 * Gemfile
 
-      gem 'bootstrap-sass', '~>3.3.4.1'
-      gem 'autoprefixer-rails', '~>5.2.0'
+  ```gem 'bootstrap-sass', '~>3.3.4.1'```
 
-      bundle install
+  ```gem 'autoprefixer-rails', '~>5.2.0'```
+
+  ```bundle install``` 
 
 * Create custom.css.scss under stylesheet directory
 
