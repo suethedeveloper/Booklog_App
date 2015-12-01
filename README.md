@@ -22,11 +22,11 @@ Database: PostgreSQL
 		    gem 'rspec-rails', '3.2.3'
 		```
 		* Add the following at the end of the file:
-		```ruby		    
+		```ruby	
 		    group :test do
 		      gem 'capybara', '2.4.4'
 		    end
-		```		    
+		```		
 
 3. run:
     ```bundle install```
@@ -67,3 +67,29 @@ Database: PostgreSQL
     ```
 5. run to start the guard:
     ```guard```
+
+------
+
+#### Add Bootstrap
+  * Gemfile
+```gem 'bootstrap-sass', '~>3.3.4.1'```
+```gem 'autoprefixer-rails', '~>5.2.0' ```
+
+bunle install
+
+  * Create custom.css.scss under stylesheet directory
+  ```@import "bootstrap-sprockets";```
+  ```@import "bootstrap";```
+
+  * application.js under javascript directory
+  ```//= require bootstrap-sprockets```
+
+#### Add Devise 
+  * Gemfile
+  ```gem 'devise'```
+
+  * command line
+  ```bundle install```
+  ```rails generate devise:install```
+  ```rails generate devise user```
+  ```rake db:migrate```
