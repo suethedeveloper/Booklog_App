@@ -39,37 +39,31 @@ Database: PostgreSQL
 
 6. run:
     ```ruby 
-    rspec spec/features/creating_article_spec.rspec.rb
+    rspec spec/features/creating_homepage_spec.rspec.rb
     ```
 ----------
 
 ### Set up Guard (https://github.com/guard/guard-rspec)
-1. Gemfile: 
+Gemfile: 
 	* under group :development, :test do -> ad
-		  ```ruy
-		  gem 'guard-rspec', require: fale
+		  ```
+      gem 'guard-rspec', require: fale
 		  gem 'spring-commands-rspe'
-		  ``
-2. run:
-
-    ```bundle install```
+      ```
+run:
+  ```bundle install```
     
-3. run (this will create a new guard file):
+run (this will create a new guard file):
     ```guard init rspec```
-4. open Guardfile from a root directory and change:
+open Guardfile from a root directory and change:
     Original
-    ```ruby
-    guard :rspec, cmd: "bundle exec rspec" do
-    ```
+    ```guard :rspec, cmd: "bundle exec rspec" do```
     Change To
-    ```ruby
-    guard :rspec, cmd: "rspec" do
-    ```
-5. run to start the guard:
+    ```guard :rspec, cmd: "rspec" do```
+run to start the guard:
     ```guard```
 
 ------
-
 #### Add Bootstrap
   * Gemfile
 ```gem 'bootstrap-sass', '~>3.3.4.1'```
@@ -93,3 +87,11 @@ bunle install
   ```rails generate devise:install```
   ```rails generate devise user```
   ```rake db:migrate```
+
+---------- TESTING FEATURES ------------
+Create feature specs to test under spec/features 
+For example: 
+   ```mkdir spec/features```
+   ```touch spec/features/creating_article_spec.rspec```
+run 
+  ```guard```
