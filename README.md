@@ -16,12 +16,12 @@ Database: PostgreSQL
 
 2. Set up RSpec and Capybara gems
 
-		Gemfile:
-		* Add under group :development, :test do
+Gemfile:
+* Add under group :development, :test do
 		```ruby
 		    gem 'rspec-rails', '3.2.3'
 		```
-		* Add the following at the end of the file:
+* Add the following at the end of the file:
 		```ruby	
 		    group :test do
 		      gem 'capybara', '2.4.4'
@@ -64,12 +64,13 @@ run to start the guard:
     ```guard```
 
 ------
+
 #### Add Bootstrap
 * Gemfile
 ```gem 'bootstrap-sass', '~>3.3.4.1'```
 ```gem 'autoprefixer-rails', '~>5.2.0' ```
 
-bunle install
+bundle install
 
 * Create custom.css.scss under stylesheet directory
 
@@ -88,11 +89,16 @@ bunle install
 * command line
 
   ```bundle install```
+
   ```rails generate devise:install```
+  
   ```rails generate devise user```
+  
   ```rake db:migrate```
 
+
 ---------- TESTING FEATURES ------------
+
 Create feature specs to test under spec/features 
 
 For example: 
@@ -101,5 +107,7 @@ For example:
 
    ```touch spec/features/creating_article_spec.rspec```
 run 
-
   ```guard```
+
+
+  
