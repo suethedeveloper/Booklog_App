@@ -17,18 +17,16 @@ Database: PostgreSQL
 Gemfile:
 * Add under group :development, :test do
 
-		```
 		    gem 'rspec-rails', '3.2.3'
-		```
+
 * Add the following at the end of the file:
 
-		```
 		    group :test do
 
 		      gem 'capybara', '2.4.4'
 
 		    end
-		```		
+
 3. run:
     ```bundle install```
 4. run:
@@ -46,11 +44,10 @@ Gemfile:
 ### Set up Guard (https://github.com/guard/guard-rspec)
 Gemfile: 
 	* under group :development, :test do -> ad
-		  ```
       gem 'guard-rspec', require: fale
 
 		  gem 'spring-commands-rspe'
-      ```
+      
 run:
   ```bundle install```
     
@@ -72,8 +69,8 @@ run to start the guard:
 
 #### Add Bootstrap
 * Gemfile
-```gem 'bootstrap-sass', '~>3.3.4.1'```
-```gem 'autoprefixer-rails', '~>5.2.0' ```
+  ```gem 'bootstrap-sass', '~>3.3.4.1'```
+  ```gem 'autoprefixer-rails', '~>5.2.0' ```
 
 bundle install
 
@@ -102,17 +99,18 @@ bundle install
   ```rake db:migrate```
 
 
----------- TESTING FEATURES ------------
+#### TESTING FEATURES 
 
 Create feature specs to test under spec/features 
 
 For example: 
 
-   ```mkdir spec/features```
+  mkdir spec/features
 
-   ```touch spec/features/creating_article_spec.rspec```
+  touch spec/features/creating_article_spec.rspec
 run 
-  ```guard```
+  guard
+  
 
 
   
