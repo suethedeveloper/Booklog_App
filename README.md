@@ -46,7 +46,7 @@ Gemfile:
 
       gem 'guard-rspec', require: fale
 
-		  gem 'spring-commands-rspe'
+      gem 'spring-commands-rspe'
       
 run:
   ```bundle install```
@@ -57,10 +57,12 @@ run (this will create a new guard file):
 open Guardfile from a root directory and change:
 
 Original
-    ```guard :rspec, cmd: "bundle exec rspec" do```
+
+      guard :rspec, cmd: "bundle exec rspec" do```
 
 Change To
-    ```guard :rspec, cmd: "rspec" do```
+
+      guard :rspec, cmd: "rspec" do```
 
 run to start the guard:
     ```guard```
@@ -105,8 +107,7 @@ Create feature specs to test under spec/features
 
 For example: 
 
-        mkdir spec/features```
-
+        mkdir spec/features
         touch spec/features/creating_article_spec.rspec
 
 run 
