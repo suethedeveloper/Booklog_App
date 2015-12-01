@@ -22,9 +22,7 @@ Gemfile:
 * Add the following at the end of the file:
 
 		    group :test do
-
 		      gem 'capybara', '2.4.4'
-
 		    end
 
 3. run:
@@ -34,6 +32,7 @@ Gemfile:
 5. Create a testing file under spec:
 
 	 ```mkdir spec/features```
+
 	 ```touch spec/features/creating_article_spec.rspec```
 6. run:
 
@@ -44,6 +43,7 @@ Gemfile:
 ### Set up Guard (https://github.com/guard/guard-rspec)
 Gemfile: 
 	* under group :development, :test do -> ad
+
       gem 'guard-rspec', require: fale
 
 		  gem 'spring-commands-rspe'
@@ -105,12 +105,14 @@ Create feature specs to test under spec/features
 
 For example: 
 
-  mkdir spec/features
+        mkdir spec/features```
 
-  touch spec/features/creating_article_spec.rspec
+        touch spec/features/creating_article_spec.rspec
+
 run 
-  guard
-  
+
+        guard
+
 
 
   
