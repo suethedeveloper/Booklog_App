@@ -8,58 +8,62 @@ Rails version: ails 4.2.4
 Database: PostgreSQL
 
 
-- Create without default testing framework
-- Set up RSpec and Capybara gems
+----------
 
-Gemfile:
-* Add under group :development, :test do
-    gem 'rspec-rails', '3.2.3'
-* Add the following at the end of the file:
-    group :test do
-      gem 'capybara', '2.4.4'
-    end
+### Set up RSpec
 
-* run:
-    bundle install
-* run:
+1. Create without default testing framework
+
+2. Set up RSpec and Capybara gems
+
+		Gemfile:
+		* Add under group :development, :test do
+		```ruby
+		    gem 'rspec-rails', '3.2.3'
+		```
+		* Add the following at the end of the file:
+		```ruby		    
+		    group :test do
+		      gem 'capybara', '2.4.4'
+		    end
+		```		    
+
+3. run:
+    ```bundle install```
+4. run:
     rails generate rspec:install
-* Create a testing file under spec:
-    touch spec/features/creating_article_spec.rspec.rb
+5. Create a testing file under spec:
 
-* Here is creating_article_spec.rspec.rb file:
-  require 'rails_helper'
-  RSpec.feature "Creating Articles" do
-    scenario "A user creates a new article" do
-      visit "/"
+	 ```mkdir spec/features```
+	 ```touch spec/features/creating_article_spec.rspec```
 
-      click_link "New Article"
-
-      fill_in "Title", with: "Creating first article"
-      fill_in "Body", with: "Lorem Ipsum"
-      click_button "Create Article"
-
-      expect(page).to have_content("Article has been created")
-      expect(page.current_path).to eq(articles_path)
-    end
-  end
-
-* run:
+6. run:
+    ```ruby 
     rspec spec/features/creating_article_spec.rspec.rb
+    ```
+----------
 
-### Install Guard (https://github.com/guard/guard-rspec)
-Gemfile:
-* Add under group :development, :test do
-  gem 'guard-rspec', require: false
-  gem 'spring-commands-rspec'
+### Set up Guard (https://github.com/guard/guard-rspec)
+1. Gemfile: 
+	* under group :development, :test do -> ad
+		  ```ruy
+		  gem 'guard-rspec', require: fale
+		  gem 'spring-commands-rspe'
+		  ``
+2. run:
 
-* run:
-    bundle install
-* run (this will create a new guard file):
-    guard init rspec
-* open Guardfile from a root directory and change:
+    ```bundle install```
+    
+3. run (this will create a new guard file):
+    ```guard init rspec```
+4. open Guardfile from a root directory and change:
     Original
+    ```ruby
     guard :rspec, cmd: "bundle exec rspec" do
+    ```
     Change To
+    ```ruby
     guard :rspec, cmd: "rspec" do
-* run to start the guard:
-    guard 
+    ```
+5. run to start the guard:
+    ```guard```
