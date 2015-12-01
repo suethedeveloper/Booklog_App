@@ -13,6 +13,7 @@ Database: PostgreSQL
 ### Set up RSpec
 
 1. Create without default testing framework
+
 2. Set up RSpec and Capybara gems
 Gemfile:
 * Add under group :development, :test do
@@ -26,14 +27,18 @@ Gemfile:
 		    end
 
 3. run:
-      bundle install
+
+        bundle install
 4. run:
-      rails generate rspec:install
+
+        rails generate rspec:install
+
 5. Create a testing file under spec:
 
 	 ```mkdir spec/features```
 
 	 ```touch spec/features/creating_article_spec.rspec```
+
 6. run:
 
     ```rspec spec/features/creating_homepage_spec.rspec.rb```
