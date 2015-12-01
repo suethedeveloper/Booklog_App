@@ -65,24 +65,28 @@ run to start the guard:
 
 ------
 #### Add Bootstrap
-  * Gemfile
+* Gemfile
 ```gem 'bootstrap-sass', '~>3.3.4.1'```
 ```gem 'autoprefixer-rails', '~>5.2.0' ```
 
 bunle install
 
-  * Create custom.css.scss under stylesheet directory
+* Create custom.css.scss under stylesheet directory
+
   ```@import "bootstrap-sprockets";```
+
   ```@import "bootstrap";```
 
   * application.js under javascript directory
+  
   ```//= require bootstrap-sprockets```
 
 #### Add Devise 
-  * Gemfile
+* Gemfile
   ```gem 'devise'```
 
-  * command line
+* command line
+
   ```bundle install```
   ```rails generate devise:install```
   ```rails generate devise user```
@@ -90,8 +94,12 @@ bunle install
 
 ---------- TESTING FEATURES ------------
 Create feature specs to test under spec/features 
+
 For example: 
+
    ```mkdir spec/features```
+
    ```touch spec/features/creating_article_spec.rspec```
 run 
+
   ```guard```
