@@ -71,10 +71,11 @@ run to start the guard:
 
 #### Add Bootstrap
 * Gemfile
+
       gem 'bootstrap-sass', '~>3.3.4.1'
       gem 'autoprefixer-rails', '~>5.2.0'
 
-bundle install
+      bundle install
 
 * Create custom.css.scss under stylesheet directory
 
@@ -88,6 +89,7 @@ bundle install
 
 #### Add Devise 
 * Gemfile
+
   ```gem 'devise'```
 
 * command line
