@@ -13,21 +13,22 @@ Database: PostgreSQL
 ### Set up RSpec
 
 1. Create without default testing framework
-
 2. Set up RSpec and Capybara gems
-
 Gemfile:
 * Add under group :development, :test do
-		```ruby
+
+		```
 		    gem 'rspec-rails', '3.2.3'
 		```
 * Add the following at the end of the file:
-		```ruby	
+
+		```
 		    group :test do
+
 		      gem 'capybara', '2.4.4'
+
 		    end
 		```		
-
 3. run:
     ```bundle install```
 4. run:
@@ -36,11 +37,10 @@ Gemfile:
 
 	 ```mkdir spec/features```
 	 ```touch spec/features/creating_article_spec.rspec```
-
 6. run:
-    ```ruby 
-    rspec spec/features/creating_homepage_spec.rspec.rb
-    ```
+
+    ```rspec spec/features/creating_homepage_spec.rspec.rb```
+
 ----------
 
 ### Set up Guard (https://github.com/guard/guard-rspec)
@@ -48,6 +48,7 @@ Gemfile:
 	* under group :development, :test do -> ad
 		  ```
       gem 'guard-rspec', require: fale
+
 		  gem 'spring-commands-rspe'
       ```
 run:
@@ -55,11 +56,15 @@ run:
     
 run (this will create a new guard file):
     ```guard init rspec```
+
 open Guardfile from a root directory and change:
-    Original
+
+Original
     ```guard :rspec, cmd: "bundle exec rspec" do```
-    Change To
+
+Change To
     ```guard :rspec, cmd: "rspec" do```
+
 run to start the guard:
     ```guard```
 
