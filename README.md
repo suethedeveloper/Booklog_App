@@ -26,9 +26,9 @@ Gemfile:
 		    end
 
 3. run:
-    ```bundle install```
+      bundle install
 4. run:
-    rails generate rspec:install
+      rails generate rspec:install
 5. Create a testing file under spec:
 
 	 ```mkdir spec/features```
@@ -49,20 +49,20 @@ Gemfile:
       gem 'spring-commands-rspe'
       
 run:
-  ```bundle install```
+      bundle install
     
 run (this will create a new guard file):
-    ```guard init rspec```
+      guard init rspec
 
 open Guardfile from a root directory and change:
 
 Original
 
-      guard :rspec, cmd: "bundle exec rspec" do```
+      guard :rspec, cmd: "bundle exec rspec" do
 
 Change To
 
-      guard :rspec, cmd: "rspec" do```
+      guard :rspec, cmd: "rspec" do
 
 run to start the guard:
     ```guard```
@@ -71,8 +71,8 @@ run to start the guard:
 
 #### Add Bootstrap
 * Gemfile
-  ```gem 'bootstrap-sass', '~>3.3.4.1'```
-  ```gem 'autoprefixer-rails', '~>5.2.0' ```
+      gem 'bootstrap-sass', '~>3.3.4.1'
+      gem 'autoprefixer-rails', '~>5.2.0'
 
 bundle install
 
