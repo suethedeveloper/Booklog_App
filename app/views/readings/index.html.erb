@@ -1,0 +1,7 @@
+<div class="col-md-8 col-xs-12">
+  <% @reading_logs.each do |log| %>
+    <%= log.title %>
+  <% end %>
+  
+  <%= link_to "New Reading Log", new_user_reading_path(current_user), clas: "btn btn-primary link" %>
+</div>

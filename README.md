@@ -125,5 +125,25 @@ run
         guard
 
 
+#### Note
+1. login_as(@john) method 
+
+2. open
+```spec/rails_helper.rb```
+
+3. Add the following under ```require 'rspec/rails'```
+ 
+        include Warden::Test::Helpers
+        Warden.test_mode!
+
+
+
+-------------------
+
+rails g controller readings
+rails g model reading duration_in_min:integer reading_date:date user:references title author note:text
+rake db:migrate
+rails g migration add_name_to_users first_name last_name
+rake db:migrate
 
   
