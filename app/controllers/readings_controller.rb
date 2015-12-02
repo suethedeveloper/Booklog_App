@@ -14,7 +14,7 @@ class ReadingsController < ApplicationController
     @reading = current_user.readings.new(reading_params)
 
     if @reading.save
-      flash[:success] = "Reading log has been created"          
+      flash[:success] = "Reading log has been created" 
       redirect_to [current_user, @reading]
     else
       flash[:danger] = "Reading Log has not been created"
