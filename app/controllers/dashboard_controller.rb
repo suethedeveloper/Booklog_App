@@ -1,6 +1,7 @@
 class DashboardController < ApplicationController
   def index
     @readers = User.paginate(:page => params[:page])
+    #binding.pry
   end
 
   def search

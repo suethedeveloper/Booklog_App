@@ -4,6 +4,7 @@ class ReadingsController < ApplicationController
 
   def index  
     @reading_logs = current_user.readings.all
+    @friends = current_user.friends
   end
 
   def new
