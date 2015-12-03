@@ -44,7 +44,7 @@ RSpec.feature "Creating Reading Log" do
     expect(page).to have_content("Title can't be blank")
     expect(page).to have_content("Author can't be blank")
     expect(page).to have_content("Author can't be blank")
-    expect(page).to have_content("Reading Date can't be blank")
+    # expect(page).to have_content("Reading Date can't be blank")
     expect(page).to have_content("Duration in min can't be blank")
     expect(page).to have_content("Duration in min is not a number")  
    
