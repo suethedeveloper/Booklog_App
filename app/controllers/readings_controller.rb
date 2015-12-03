@@ -7,23 +7,35 @@ class ReadingsController < ApplicationController
   end
 
   def new
-    @reading = current_user.readings.new
+    @reading_log = current_user.readings.new
   end
 
   def create
-    @reading = current_user.readings.new(reading_params)
+    @reading_log = current_user.readings.new(reading_params)
 
-    if @reading.save
+    if @reading_log.save
       flash[:success] = "Reading log has been created" 
-      redirect_to [current_user, @reading]
+      redirect_to [current_user, @reading_log]
     else
       flash[:danger] = "Reading Log has not been created"
       render :new
     end
   end
 
-  def show
-    
+  def edit
+  end
+
+  def update
+    if @reading_log.update(reading_params)
+      flash[:success] = "Reading Log has been updated"
+      redirect_to [current_user, @reading_log]
+    else
+      flash[:success] = "Reading Log has not been updated"
+      render :edit
+    end
+  end
+
+  def show    
   end
 
   private

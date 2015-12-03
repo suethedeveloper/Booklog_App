@@ -18,7 +18,7 @@ RSpec.feature "Creating Reading Log" do
     fill_in "Author", with: "J. K. Rowling"
      fill_in "Reading Date", with: Date.today
     fill_in "Duration", with: 20
-    click_button "Create Reading Log"
+    click_button "Create Reading"
 
     expect(page).to have_content("Reading log has been created")
 
@@ -37,7 +37,7 @@ RSpec.feature "Creating Reading Log" do
     fill_in "Author", with: ""    
     fill_in "Reading Date", with: ""
     fill_in "Duration (min)", with: nil
-    click_button "Create Reading Log"
+    click_button "Create Reading"
 
     expect(page).to have_content("Reading Log has not been created")
 

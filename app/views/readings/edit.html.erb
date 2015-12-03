@@ -1,0 +1,5 @@
+<h1 class="text-center">Editing Reading Log for <%= current_user.full_name %></h1>
+<%= render "form" %>
+
+<%= link_to "Show", [current_user, @reading_log] %>
+<%= link_to "Back", user_readings_path(current_user) %>
