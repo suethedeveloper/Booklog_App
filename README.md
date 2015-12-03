@@ -18,13 +18,13 @@
 Gemfile:
 * Add under group :development, :test do
 
-		    gem 'rspec-rails', '3.2.3'
+	   gem 'rspec-rails', '3.2.3'
 
 * Add the following at the end of the file
 
-		    group :test do
-		      gem 'capybara', '2.4.4'
-		    end
+	   group :test do
+	     gem 'capybara', '2.4.4'
+	   end
 
 3. run
 
@@ -167,17 +167,17 @@ mv raphael-min.js vendor/assets/javascripts
 * Add the on ```registrations_controller.rb```
   
 
-      class RegistrationsController < Devise::RegistrationsController
-      private
-      
-       def sign_up_params
-         params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation)
-       end
-
-       def account_update_params
-         params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation, :current_password)
-       end
-      end
+	     class RegistrationsController < Devise::RegistrationsController
+	     private
+	      
+	      def sign_up_params
+	        params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation)
+	      end
+	
+	      def account_update_params
+	        params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation, :current_password)
+	      end
+	     end
       
 
 * Modify ```routes.rb```
