@@ -38,6 +38,12 @@ class ReadingsController < ApplicationController
   def show    
   end
 
+  def destroy
+    @reading_log.destroy
+    flash[:success] = "Reading Log has been deleted"
+    redirect_to user_readings_path(current_user)    
+  end
+
   private
   def reading_params
     params.require(:reading).permit(:title, :author, :reading_date, :duration_in_min, :user_id, :note)
