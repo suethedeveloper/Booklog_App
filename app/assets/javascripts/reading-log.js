@@ -1,3 +1,6 @@
 $(document).ready(function() {
-  $("#reading-date").datepicker({dateFormat: 'yy-mm-dd'});
+  
+  $("#reading_log_date").click(function(){
+  });
+  $("#reading_log_date").datepicker({dateFormat: 'yy-mm-dd'});
 });
