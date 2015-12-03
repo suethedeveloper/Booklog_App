@@ -7,4 +7,6 @@ class Reading < ActiveRecord::Base
   validates :duration_in_min, presence: true
   validates :duration_in_min, numericality: { only_integer: true }  
   validates :user_id, presence: true  
+
+  default_scope { where("reading_date > ?", 7.days.ago).order(reading_date: :desc) }
 end

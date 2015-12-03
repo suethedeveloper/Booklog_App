@@ -135,5 +135,29 @@ run
         include Warden::Test::Helpers
         Warden.test_mode!
 
+#### Installing CHART
+ 
+---------------- Morris.js -------------
 
-  
+
+http://morrisjs.github.io/morris.js/
+
+Right click on Download button and select 'Copy Link Address'
+
+On Terminial, run:
+
+```wget https://github.com/morrisjs/morris.js/archive/0.5.1.zip```
+
+```unzip 0.5.1.zip```
+
+```mv morris.js-0.5.1/morris.js vendor/assets/javascripts/```
+
+---------------- Raphael JavaScript Library -------------
+
+http://raphaeljs.com/
+
+Right click on Download button and select 'Copy Link Address'
+
+wget http://github.com/DmitryBaranovskiy/raphael/raw/master/raphael-min.js
+
+mv raphael-min.js vendor/assets/javascripts
