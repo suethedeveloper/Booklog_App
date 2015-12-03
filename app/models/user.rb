@@ -6,6 +6,12 @@ class User < ActiveRecord::Base
   has_many :readings
   validates :first_name, presence: true
   validates :last_name, presence: true
+
+  has_many :friendships
+
+  # there is no friends table(model) & friends are also users
+  # to solve this issue, add class_name: "User"
+  has_many :friends, through: :friendships, class_name: "User"
   
   #how many reader to show on one page. 
   self.per_page = 5
@@ -25,6 +31,10 @@ class User < ActiveRecord::Base
       where('first_name ILIKE ? or first_name ILIKE ? or last_name ILIKE ? or last_name ILIKE ?', 
     "%#{names_array[0]}%", "%#{names_array[1]}%", "%#{names_array[0]}%", "%#{names_array[1]}%").order(:first_name)
     end
+  end
+
+  def follows_or_same?(new_friend)
+    friendships.map(&:friend).include?(new_friend) || self == new_friend
   end
 
 end

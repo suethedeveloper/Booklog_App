@@ -13,6 +13,8 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :friendships, only: [:show, :create, :destroy]
+
   root 'dashboard#index'
 
 end

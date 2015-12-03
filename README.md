@@ -201,3 +201,25 @@ mv raphael-min.js vendor/assets/javascripts
 * view (index.html.erb) 
 
       <%= will_paginate @readers, renderer: BootstrapPagination::Rails, class: "pull-left paginate" %>
+
+### Follow Friends
+* Instead of creating Friends table, use User table
+
+      has_many :friends, through: :friendships, class_name: "User"
+
+* Generate 'Friendship' Model
+
+      rails generate model friendship user:references friend:references
+
+* Routes.rb
+
+      resources :friendships, only: [:show, :create, :destroy]
+
+* Create friendships_controller
+
+      class FriendshipsController < ApplicationController
+      end
+
+* Friendship model, reference class name "User"
+
+      belongs_to :friend, class_name: "User"

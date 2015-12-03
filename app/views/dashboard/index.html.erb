@@ -12,7 +12,11 @@
 <div class="row">
   <% @readers.each do |reader| %>
   <div class="col-md-10 well member">
-    <%= reader.full_name %>
+    <%= reader.full_name %> 
+    <% if current_user %>
+      <%= link_to "Follow", friendships_path(friend_id: reader.id), method: :post, class: "btn btn-primary pull-right" unless current_user.follows_or_same?(reader) %>
+
+    <% end %>
   </div>
   <% end %>
 </div>
