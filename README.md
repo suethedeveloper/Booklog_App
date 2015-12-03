@@ -126,11 +126,11 @@ run
 1. login_as(@john) method 
 
 2. open
-        spec/rails_helper.rb
+        ```spec/rails_helper.rb```
 3. Add the following under ```require 'rspec/rails'```
  
-       include Warden::Test::Helpers
-       Warden.test_mode!
+     include Warden::Test::Helpers
+     Warden.test_mode!
 
 #### Installing CHART
  
