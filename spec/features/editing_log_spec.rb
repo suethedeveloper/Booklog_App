@@ -3,7 +3,7 @@ require "rails_helper"
 RSpec.feature "Editing Reading Log" do
 
   before do
-    @owner = User.create(email: "owner@example.com", password: "password")
+    @owner = User.create(first_name: "John", last_name: "Doe", email: "owner@example.com", password: "password")
 
     @owner_log = @owner.readings.create!(title: "The Book Thief", 
                   author: "Markus Zusak", reading_date: "2015-12-01", duration_in_min: 45)
