@@ -131,6 +131,7 @@ run
 3. Add the following under ```require 'rspec/rails'```
 
       include Warden::Test::Helpers
+      
       Warden.test_mode!
 
 
