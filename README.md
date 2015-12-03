@@ -129,8 +129,9 @@ run
         ```spec/rails_helper.rb```
 3. Add the following under ```require 'rspec/rails'```
  
-     include Warden::Test::Helpers
-     Warden.test_mode!
+     ```include Warden::Test::Helpers```
+
+     ```Warden.test_mode!```
 
 #### Installing CHART
  
