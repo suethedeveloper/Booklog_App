@@ -2,3 +2,16 @@
   <h1>Book Reading Lounge</h1>
   <p>Share your booklog with your friends and family</p>
 </div>
+<div class="row">
+  <div class="col-md-10">
+    <h2>List of Members</h2>
+  </div>
+</div>
+
+<div class="row">
+  <% @readers.each do |reader| %>
+  <div class="col-md-10 well member">
+    <%= reader.full_name %>
+  </div>
+  <% end %>
+</div>
