@@ -30,7 +30,7 @@ class ReadingsController < ApplicationController
       flash[:success] = "Reading Log has been updated"
       redirect_to [current_user, @reading_log]
     else
-      flash[:success] = "Reading Log has not been updated"
+      flash[:danger] = "Reading Log has not been updated"
       render :edit
     end
   end
