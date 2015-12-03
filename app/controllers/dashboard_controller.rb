@@ -1,5 +1,5 @@
 class DashboardController < ApplicationController
   def index
-    @readers = User.all
+    @readers = User.paginate(:page => params[:page])
   end
 end

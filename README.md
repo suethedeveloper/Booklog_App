@@ -186,3 +186,18 @@ mv raphael-min.js vendor/assets/javascripts
 * Modify ```routes.rb```
 
   ```devise_for :users, :controllers => {registrations: 'registrations'}```
+
+#### Pagination
+* [Pagination](https://github.com/bootstrap-ruby/will_paginate-bootstrap "Pagination") https://github.com/bootstrap-ruby/will_paginate-bootstrap
+
+* Gemfile 
+
+  ```gem 'will_paginate-bootstrap'```
+
+* dashboard_controller.rb: change from ```@readers = User.all``` to ```@readers = User.paginate(:page => params[:page])```
+
+* user.rb: add ```self.per_page = 10```
+
+* view (index.html.erb) 
+
+      <%= will_paginate @readers, renderer: BootstrapPagination::Rails, class: "pull-left paginate" %>

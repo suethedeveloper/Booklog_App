@@ -7,6 +7,9 @@ class User < ActiveRecord::Base
   validates :first_name, presence: true
   validates :last_name, presence: true
   
+  #how many reader to show on one page. 
+  self.per_page = 5
+  
   def full_name
     "#{first_name} #{last_name}"        
   end       
