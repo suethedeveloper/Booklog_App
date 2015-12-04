@@ -1,0 +1,31 @@
+<div class="col-md-8">
+  <p id="notice"> <%= notice %></p>
+  <h1><%= @friend.full_name %>'s Reading Log</h1>
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Book Title</th>
+        <th>Author</th>
+        <th>Reading Date</th>
+        <th>Duration (min)</th>
+        <th>Notes</th>
+        <!-- <th colspan="3"></th> -->
+      </tr>
+    </thead>
+    <tbody>
+      <% @logs.each do |log| %>
+        <tr>
+          <td><%= log.title %></td>
+          <td><%= log.author%></td>
+          <td><%= log.reading_date %></td>
+          <td><%= log.duration_in_min %></td>
+          <td><%= truncate(log.note, length: 100) %></td>
+        </tr>
+      <% end %>      
+    </tbody>
+  </table>
+  <br>
+  <%= content_tag :div, "", id: "chart", data: {logs: @logs} %>
+</div>
+<%= link_to "Back", user_readings_path(current_user), class: "btn btn-primary link" %>
