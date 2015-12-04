@@ -11,7 +11,7 @@ RSpec.feature "Deleting Reading Log" do
     visit "/"
 
     click_link "My Lounge"
-    link = "//a[contains(@href, '/users/#{@owner.id}/readings/#{@owner_log.id}') and .//text()='Destroy']"
+    link = "//a[contains(@href, '/users/#{@owner.id}/readings/#{@owner_log.id}') and .//text()='Delete']"
     find(:xpath, link).click
 
     expect(page).to have_content("Reading Log has been deleted")
