@@ -1,14 +1,16 @@
-<div class="jumbotron">
+<div class="jumbotron text-center" id="main_header_img">
   <h1>Book Reading Lounge</h1>
-  <p>Share your booklog with your friends and family</p>
+  <p>Share your <span class="main_sub_header">Reading Log</span> with your family and friends</p>
 </div>
-<div class="row">
-  <div class="col-md-10">
-    <h2>List of Members</h2>
-    <%= will_paginate @readers, renderer: BootstrapPagination::Rails, class: "pull-left paginate" %>
-  </div>
+<div>
+    <h2>Little Bookworms</h2>
+    <!-- <i class="fa fa-camera-retro"></i> fa-camera-retro -->
 </div>
-<div class="container">
+<div class="text-right">
+    <%= will_paginate @readers, renderer: BootstrapPagination::Rails, class: "paginate" %>
+</div>
+
+<!-- <div class="container">
   <div class="row">
     <% @readers.each do |reader| %>
     <div class="col-md-10 well member">
@@ -19,4 +21,45 @@
     </div>
     <% end %>
   </div>
-</div>  
+</div>  -->
+
+  <div class="row">
+
+<% @readers.each do |reader| %>
+
+    <div class="col-md-6">
+      <div id="wrapper">
+          <div class="page text-center" id="page1">
+            <div class="content">
+              <%= reader.full_name %>
+            </div>
+            <div class="follow">
+              <% if current_user %>
+                <%= link_to "Follow", friendships_path(friend_id: reader.id), method: :post, class: "btn btn-primary pull-right" unless current_user.follows_or_same?(reader) %>
+              <% end %>
+            </div>            
+          </div>
+          <div class="page" id="page2"><div class="content"></div></div>
+          <div class="page" id="page3"><div class="content"></div></div>
+          <div class="page" id="page4"><div class="content"></div></div>
+          <div class="page" id="page5"><div class="content"></div></div>
+          <div class="page" id="page6"><div class="content"></div></div>
+          <div class="page" id="page7">
+            <div class="content">
+              <% if reader.readings.length >0  %>
+                <% reader.readings.each do |log|  %>
+                <%= log.title %>
+                <br>
+                <% end %>
+              <% else %>
+                <%= "#{reader.full_name} doesn't have a Reading Log yet" %>
+              <% end %>            
+            </div>
+          </div>
+      </div>        
+    </div>
+    <% end %>    
+  </div>
+
+
+  

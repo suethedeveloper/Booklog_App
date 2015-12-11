@@ -223,3 +223,52 @@ mv raphael-min.js vendor/assets/javascripts
 * Friendship model, reference class name "User"
 
       belongs_to :friend, class_name: "User"
+
+
+#### Deploying to Heroku
+$ heroku login
+
+
+In Gemfile, add the rails_12factor gem::
+
+```gem 'rails_12factor', group: :production```
+
+```$ bundle install```
+
+```
+$ git add .
+$ git commit -m "Heroku config"
+```
+
+
+In the terminal, create an app on Heroku:
+
+```$ heroku create```
+
+Push your code to Heroku:
+
+```$ git push heroku master```
+
+If you are using the database in your application, migrate the database by running:
+
+```$ heroku run rake db:migrate```
+
+If you need to seed your database with data, run:
+
+```$ heroku run rake db:seed```
+
+Get the URL of your app and visit it in the browser:
+
+```$ heroku apps:info```
+
+In the output, copy the address in the Web URL field. Open a new tab in your browser, and visit your app.
+
+before deploying to update Gemfile.lock
+
+```bundle install --without production```
+
+run rake:db migrate on heroku
+
+-------- HEROKU ---------------
+$ heroku run rails console
+https://devcenter.heroku.com/articles/custom-domains

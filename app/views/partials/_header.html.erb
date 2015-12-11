@@ -29,7 +29,7 @@
             <li><%= link_to "My Lounge", user_readings_path(current_user) %></li>
             <li><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
             <div class="navbar-right">
-              <p class="navbar-text">Signed in as <%= "#{current_user.email}" %></p>
+              <p class="navbar-text"><%= "#{current_user.full_name}" %>&nbsp;&nbsp;</p>
             </div>
           <% else %>
             <li><%= link_to "Sign up", new_user_registration_path %></li>
