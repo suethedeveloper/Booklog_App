@@ -109,9 +109,10 @@ div.main_reader2 {
 }*/
 
 /*----- Each Reader Log ---------*/
-div.content {
-  position: relative;
-}
+div.content { position: relative; }
+
+#page1 div.content { padding-top: 50px; }
+#page7 div.content { padding-top: 10px; }
 
 div.follow {
   position: absolute;
@@ -120,7 +121,7 @@ div.follow {
 }
 
 #wrapper{
-    min-height: 140px;
+    min-height: 250px;
     /*background:#aa1111;*/
     position:relative;
 /*    top:50px;
@@ -132,7 +133,7 @@ div.follow {
 .page{
     background:#fff;
     /*width:100%;*/
-    min-height: 100px;
+    min-height: 230px;
     /*height:310px;*/
     position:absolute;
 
@@ -186,6 +187,7 @@ div.follow {
 #page6{ left:572px; }
 
 
+
 section {
   text-align: center;
   overflow: hidden;
@@ -195,25 +197,13 @@ ul {
   list-style: none;
 }
 
-.log-list {
-  /*counter-reset: tutorialstep;*/
-  /*position:relative;*/
-}
-
-/*.log-list.active {
-  display: block;
-}
-*/
 .log-list > li {
   position: relative;
   background-color: #fff;
   margin-bottom: 25px;
   padding: 10px 15px 10px 0;
-/*  margin: 0 0 70px 0px;
-  padding: 40px 0 60px;*/
   font-size: 18px;
   border: 1px solid #ddd;
-  /*border-radius: 5px;*/
   text-align: left;
   z-index: 1;
 
@@ -223,52 +213,7 @@ ul {
   transition: all 0.6s ease-in-out 0s;
 }
 
-/*
-ul li.note {
-  background-color: #999;
-}
-.wrapper {
-  position:relative;
-  width: 980px;
-  margin: 0 auto;
-}*/
-
-/*.log-list .book-thum:after {
-  content: "?";
-}*/
-
-
-/*.tutorial-list > li:not(.book-thum):after {
-  counter-increment: tutorialstep;
-  content: counter(tutorialstep);
-}*/
-
-/*.log-list > li:after {
-  width: 58px;
-  height: 58px;
-  line-height: 58px;
-  background-color: #327fc7;
-
-  font-size: 30px;
-  font-weight: 300;
-  color: #fff;
-  position: absolute;
-  left: -30px;
-  top: 50px;
-  text-align: center;
-  -webkit-backface-visibility: hidden;
-  z-index: 100;
-}*/
-
 .log-list li.book-thum {
-/*  width: 100px;
-  height: 100px;
-  line-height: 58px;
-  background-color: #ccc;*/
-  /*border-radius: 200px;*/
-/*  font-size: 30px;
-  font-weight: 300;
-  color: #fff;*/
   position: absolute;
   left: -65px;
   top: 10px;
