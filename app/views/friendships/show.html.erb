@@ -25,27 +25,30 @@
         <% end %>      
       </tbody> -->
 
+    <section>
+      <ul class="log-list">
 
-      <section>
-        <ul class="log-list">
+      <% @logs.each do |log| %>
+        <li class="log<%= log.id %> ">
+          <ul>
+            <li><strong><%= log.title %></strong> by <%= log.author %></li>
+            <li class="text-right small"><%= log.reading_date %> | <%= log.duration_in_min %> minutes</li>
+            <li><hr></li>
+            <li class="note"><em><%= truncate(log.note, length: 100) %></em></li>
+            <li class="text-right small">
 
-        <% @logs.each do |log| %>
-          <li class="log<%= log.id %> book-thum">
-            <ul>
-              <li><strong><%= log.title %></strong> by <%= log.author %></li>
-              <li class="text-right small"><%= log.reading_date %> | <%= log.duration_in_min %> minutes</li>
-              <li><hr></li>
-              <li class="note"><em><%= truncate(log.note, length: 100) %></em></li> 
-              <li class="text-right small">
-                <%= link_to "Edit This Log", [:edit, current_user, log] %> | <%= link_to "Delete", [current_user, log], method: :delete,
-                                                      data: {confirm: "Are you sure?" } %>
-              </li>
-            </ul>
-          </li>
-        <% end %> 
+              <%= link_to "Edit This Log", [:edit, current_user, log] %> | <%= link_to "Delete", [current_user, log], method: :delete, data: {confirm: "Are you sure?" } %>
 
-        </ul>
-      </section>
+              <span class="rating" data-id="<%= log.id %>"><i class="fa fa-star icon-a"></i><i class="fa fa-star-o"></i><i class="fa fa-star" data-star="3"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i></span>
+            </li>
+            <li class="book-thum" data-id="<%= log.id %>" data-title="<%= log.title %>" data-author="<%= log.author %>"></li>
+          </ul>
+        </li>
+      <% end %>
+
+      </ul>
+    </section>
+
       <p>
         <%= content_tag :div, "", id: "chart", data: {logs: @logs} %>    
       </p>
