@@ -36,12 +36,14 @@
             <li><hr></li>
             <li class="note"><em><%= truncate(log.note, length: 100) %></em></li>
             <li class="text-right small">
-
-              <%= link_to "Edit This Log", [:edit, current_user, log] %> | <%= link_to "Delete", [current_user, log], method: :delete, data: {confirm: "Are you sure?" } %>
-
               <span class="rating" data-id="<%= log.id %>"><i class="fa fa-star icon-a"></i><i class="fa fa-star-o"></i><i class="fa fa-star" data-star="3"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i></span>
             </li>
             <li class="book-thum" data-id="<%= log.id %>" data-title="<%= log.title %>" data-author="<%= log.author %>"></li>
+          </ul>
+          <ul>
+            <li>
+              Comments: 
+            </li>
           </ul>
         </li>
       <% end %>

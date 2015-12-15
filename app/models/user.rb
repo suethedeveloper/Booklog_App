@@ -9,9 +9,12 @@ class User < ActiveRecord::Base
 
   has_many :friendships
 
-  # there is no friends table(model) & friends are also users
+  # Noo friends table(model)in this app & friends are also users
   # to solve this issue, add class_name: "User"
   has_many :friends, through: :friendships, class_name: "User"
+
+  #for comments
+  # has_many :inverse_friendships, class_name: "Friendship", foreign_key: "friend_id"
   
   #how many reader to show on one page. 
   self.per_page = 5

@@ -39,10 +39,15 @@ $(document).ready(function() {
     var ratingsCount = 0;
     var maxRating = 5;
 
+
     var star = "<i class='fa fa-star'></i>";
     
-    var url = "https://www.googleapis.com/books/v1/volumes?q="+title+"inauthor:"+author+ "&printType=books&maxResults=3";
+    var url = "https://www.googleapis.com/books/v1/volumes?q="+title+"&inauthor:"+author+ "&printType=books&maxResults=3";
+    console.log(url);
     $.getJSON(url, function(data){
+      console.log(data);
+
+
       
       //--- RATING ---//
       var $book_rating_star = $('span.rating[data-id="'+log_id+'"]');

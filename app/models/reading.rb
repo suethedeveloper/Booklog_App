@@ -9,4 +9,7 @@ class Reading < ActiveRecord::Base
   validates :user_id, presence: true  
 
   default_scope { where("reading_date > ?", 7.days.ago).order(reading_date: :desc) }
+
+  #how many reader to show on one page. 
+  self.per_page = 3
 end

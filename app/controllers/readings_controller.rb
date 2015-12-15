@@ -3,7 +3,9 @@ class ReadingsController < ApplicationController
   before_action :set_reading, except: [:index, :new, :create]
 
   def index  
-    @reading_logs = current_user.readings.all
+    # @reading_logs = current_user.readings.all
+    @reading_logs = current_user.readings.all.paginate(:page => params[:page])
+    # binding.pry
     @friends = current_user.friends
   end
 
